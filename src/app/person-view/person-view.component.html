@@ -1,0 +1,19 @@
+<h3> 
+    More Information:
+</h3>
+    <table id="person-view">
+        <tr>
+            <th>Person Reported</th>
+            <th>Phone</th>
+            <th>Place</th>
+            <th>Date and Time</th>
+            <th>Comment</th>
+          </tr>
+        <tr>
+            <td> {{ person.data.name}}</td>
+            <td>{{ person.data.phone}}</td>
+            <td>{{ person.data.place}}</td>
+            <td>{{person.data.date}} {{person.data.time}}</td>
+            <td>{{ person.data.comment}}</td>
+        </tr>
+    </table>

@@ -1,0 +1,58 @@
+<nav>
+  <h1>
+    {{ title }}
+  </h1>
+</nav>
+<!--
+Start Date:<input type="date" placeholder="yy/MM/dd" [(ngModel)] = "start"><br>
+End Date<input type="date" placeholder="yy/MM/dd"[(ngModel)] = "end"><br>
+-->
+<div #gmap style="width:100%;height:400px"></div>
+<router-outlet (view)="onPersonView($event)"></router-outlet> <br>
+   
+   <button 
+   (click)="SortPlace($event)"
+   id="sort1"
+   >
+      Place
+   </button>
+   <button 
+   (click)="SortName($event)"
+   id="sort2"
+   >
+      Person Reported
+   </button>
+   <button 
+   (click)="SortTime($event)"
+   id="sort3"
+   >
+      Date of Visit
+   </button>
+   
+  <app-person
+    *ngFor="let p of people "
+    [person_input]="p"
+    (delete)="onPersonDeleted($event)"
+    
+    
+  >
+  </app-person>
+  <button 
+  (click)="FormShow($event)"
+  id="create-button"
+  >
+  CREATE REPORT
+  </button>
+
+ <app-person-form 
+ (submit)="onPersonSubmit()"  
+ [style.visibility]="'hidden'" 
+ id="formP"
+ [location_input]="location"
+ >
+</app-person-form>
+ 
+
+<div style="padding-bottom: 1em;">
+
+

@@ -1,0 +1,55 @@
+
+<table>
+    <tr>
+        <th>Place</th>
+        <th>Person Reported</th>
+        <th>Date and time</th>
+        <th>Delete</th>
+        <th>More Info</th>
+      </tr>
+    <tr>
+        <td> {{ person_input.data.place}}</td>
+        <td>{{ person_input.data.name}}</td>
+        <td>{{person_input.data.date}} {{person_input.data.time}}</td>
+        <td><button 
+        (click)="onDelete($event)"
+        id="delete"
+        >
+            DELETE
+        </button></td>
+        <td>
+            <button 
+            routerLink="/view/{{person_input.key}}"
+            id="info"
+            >
+                MORE INFO
+            </button>
+        </td> 
+    </tr>
+</table>
+    <!-- date: 'medium'
+    {{ person_input.added | date: "MM/dd/yyyy, hh:mm"}} <br>
+    <span *ngIf = "person_input.instructor; then first else second"
+    >
+    </span> 
+    <ng-template #first>INSTRUCTOR</ng-template>
+    <ng-template #second>NOT INSTRUCTOR</ng-template>
+    <br>
+    <span [textContent]="person_input.instructor"></span> 
+    <br> -->
+    <!--appFav
+    [appInstructorSetter]="person_input.instructor"
+    <span 
+    appFav
+    
+    >
+        FAVOURITE
+    </span>
+    <br> -->
+    <!-- {{ greet() }} 
+    <button 
+      (click)="onDelete($event)"
+      >
+        DELETEs
+    </button> -->
+

@@ -1,0 +1,25 @@
+<form
+name="myForm"
+[formGroup]="form"
+(ngSubmit)="onSubmit(form.value)"
+
+>
+    <h3>Personal Information</h3>
+    Full Name: <input type="text" name="name" placeholder="NAME" formControlName="name"> <br>
+    <!--Instructor: <input type="checkbox" name="instructor_checkbox" formControlName="instructor"> <br>-->
+    Phone Number: <input type="number" name="phone" placeholder="PHONE NUMBER" formControlName="phone"> <br>
+    <!-- Select a place: <select name="option" id="option">
+        <option
+        *ngFor = "let l of location_input"
+        value= {{l.place}}
+        >{{l.place}}</option>
+    </select><br> -->
+     <!-- Check if this is a new place? <input type="checkbox" (change)="checkedBox($event)"><br> -->
+    Select a Place: <input type="text" name="place" placeholder="PLACE" formControlName="place"><br>
+    Longitude: <input type="number" name="longitude" placeholder="LONGITUDE" formControlName="longitude"><br>
+    Latitude: <input type="number" name="latitude" placeholder="LATITUDE" formControlName="latitude"><br>
+    Date: <input type="date" name="date" placeholder="yy/MM/dd" formControlName="date"> <br>
+    Time: <input type="time" name="time" placeholder="hh:mm PM/AM" formControlName="time"> <br>
+    Comment: <textarea name="comment" placeholder="EXTRA COMMENTS" formControlName="comment"></textarea><br>
+    <button [disabled] = "!form.valid">SUBMIT</button><br>
+</form>
